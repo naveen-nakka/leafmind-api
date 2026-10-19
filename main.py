@@ -30,16 +30,16 @@ def download_drive_file(file_id, destination):
         return
 
     result = subprocess.run(
-        [
-            "gdown",
-            "--id", file_id,
-            "-O", destination,
-            "--fuzzy"
-        ],
-        capture_output=True,
-        text=True,
-        timeout=300
-    )
+    [
+        "python", "-m", "gdown",
+        "--id", file_id,
+        "-O", destination,
+        "--fuzzy"
+    ],
+    capture_output=True,
+    text=True,
+    timeout=300
+)
 
     if result.returncode != 0:
         raise RuntimeError(

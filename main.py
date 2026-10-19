@@ -32,9 +32,8 @@ def download_drive_file(file_id, destination):
     result = subprocess.run(
     [
         "python", "-m", "gdown",
-        "--id", file_id,
-        "-O", destination,
-        "--fuzzy"
+f"https://drive.google.com/uc?id={file_id}",
+"-O", destination
     ],
     capture_output=True,
     text=True,
